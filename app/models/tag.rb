@@ -1,4 +1,6 @@
 class Tag < ActiveRecord::Base
-  has_many :posts
-  has_many :users, through: :posts
+	validates :name, presence: true
+	
+	has_many :categories
+	has_many :posts, through: :tags
 end

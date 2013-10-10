@@ -1,4 +1,7 @@
 class Post < ActiveRecord::Base
-	belongs_to :user
-	belongs_to :tag
+	validates :title, presence: true
+	validates :body, presence: true
+	 
+	has_many :categories
+	has_many :tags, through: :categories
 end
